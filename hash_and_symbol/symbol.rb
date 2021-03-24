@@ -22,7 +22,9 @@ person = {
     friends: ["tanaka", "yamada"],
     phones: {hoge: "1234-0000", tel: "090-1111-1111"}
 }
-
+puts "putsは"
+hoge = {hoge: "hoge"}
+puts hash03 = {**hoge ,**hash02}  # 展開をしている {:hoge=>"hoge", :japan=>"yen", :us=>"dollar"} mergeメソッドでも良い
 puts person[:name] # keisei
 puts person[:age] # 30
 person[:friends].each do |value|
@@ -34,6 +36,9 @@ person[:phones].each do |key, value|
     # 1234-0000
     # 090-1111-1111
 end
+puts "check"
+name= "name"
+puts person[:"#{name}"] # 式展開を使ってシンボルのバリューにアクセスができるよ
 
 def buy_burger_shop(menu, drink: false, potato: false) # キーワード引数　デフォルト引数
     puts menu
@@ -47,7 +52,13 @@ def buy_burger_shop02(menu, drink:, potato:) # キーワード引数　drinkとp
     puts drink ? "ドリンクを購入" : ""
     puts potato ? "ポテトを購入" : ""
 end
+# fish
+# 
+# ポテトを購入
 
 buy_burger_shop02("salada", drink: true, potato: true)
+# salada
+# ドリンクを購入
+# ポテトを購入
 
 
